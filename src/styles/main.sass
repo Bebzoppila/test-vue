@@ -1,0 +1,171 @@
+@import "./normalize.sass"
+@import "./fonts/ibmplexsans.css"
+*
+    font-family: 'IBM Plex Sans'
+    box-sizing: border-box
+.wrapper
+    display: flex
+    align-items: center
+    justify-content: center
+    padding-top: 30px
+    &__content
+        padding: 30px 40px
+        box-shadow:  0px -1px 9px 0px rgba(50, 50, 50, 0.15)
+        width: 100%
+        max-width: 460px
+        min-width: 360px
+        border-radius: 20px
+.subtitle
+    font-size: 16px
+    line-height: 22px
+    font-weight: 400
+    &__link
+        font-size: 16px
+        line-height: 22px
+        color: #0880AE
+        text-decoration: none
+.form
+    margin-top: 50px
+    &__btn
+        font-size: 16px
+        color: rgba(235, 244, 248, 1)
+        width: 100%
+        padding: 17px 0px
+        text-align: center
+        background-color: #0880AE
+        border: 2px solid #0880AE
+        border-radius: 5px
+        cursor: pointer
+        &:disabled
+            color: rgba(44, 39, 56, 1)
+            background-color: rgba(219, 226, 234, 1)
+            border: none
+            cursor: default
+            &:hover
+                color: rgba(44, 39, 56, 1)
+        &:hover
+            color: #EBF4F8
+        &:active
+            border: 2px solid #454F62
+
+    &__item
+        display: flex
+        flex-direction: column
+        margin-bottom: 10px
+        &-help
+            color: rgba(255, 113, 113, 1)
+            font-size: 14px
+            font-weight: 400px
+            margin-top: 8px
+            opacity: 0
+            &--active
+                opacity: 1
+        &-text
+            font-size: 16px
+            line-height: 20px
+            color: #756F86
+            margin: 0px 0px  7px 0px
+        &-input
+            padding: 16px
+            font-size: 16px
+            outline: none
+            border: 2px solid #DBE2EA
+            border-radius: 7px
+            &::placeholder
+                color: rgba(124, 156, 191, 1)
+            &:focus
+                border: 2px solid rgba(8, 128, 174, 1)
+
+.select
+    position: relative
+    width: 100%
+    height: 52px
+    border: 2px solid #DBE2EA
+    padding: 15px
+    border-radius: 7px
+    cursor: pointer
+    &--active
+        border: 2px solid rgba(8, 128, 174, 1)
+    &__arrow
+        position: absolute
+        top: 50%
+        right: 10px
+        width: 22px
+        height: 22px
+        transform: translateY(-50%)
+    &__title
+        padding: 0px
+        margin: 0px
+        color: rgba(124, 156, 191, 1)
+        font-size: 16px
+    &__content
+        // display: none
+        max-height: 0px
+        overflow: hidden
+        padding: 0px
+        margin: 0px
+        list-style-type: none
+        position: absolute
+        z-index: 2
+        left: 0
+        right: 0
+        background-color: #fff
+        margin-top: 20px
+        border-radius: 7px
+        transition: all 0.3s
+        &-item
+            padding: 15px 10px
+            font-size: 16px
+            font-weight: 400
+            color: rgba(117, 111, 134, 1)
+            cursor: pointer
+            transition: all 0.2s
+            &:hover
+                background-color: #EBF4F8
+        &--active
+            border: 2px solid #DBE2EA
+            max-height: 400px
+.checkbox
+    padding-left: 35px
+    position: relative
+    &__input
+        display: none
+        &:checked ~ .checkbox__text::after
+            border: 2px solid rgba(8, 128, 174, 1)
+        &:checked ~ .checkbox__text::before
+            opacity: 1
+    &__text
+        color: #756F86
+        &::after
+            position: absolute
+            content: ""
+            top: 50%
+            left: 0
+            width: 26px
+            height: 26px
+            border: 2px solid #DBE2EA
+            transform: translateY(-50%)
+            border-radius: 4px
+        &::before
+            position: absolute
+            content: "✓"
+            top: 30%
+            left: 6px
+            width: 15px
+            height: 15px
+            transform: translateY(-50%)
+            color: rgba(8, 128, 174, 1)
+            z-index: 1
+            font-size: 25px
+            opacity: 0
+
+.title
+    font-size: 34px
+    font-weight: 700
+    line-height: 44px
+
+@media screen and (max-width: 450px)
+    .wrapper__content
+        padding: 15px 20px
+    .form
+        margin-top: 30px
