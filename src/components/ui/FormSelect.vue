@@ -1,7 +1,9 @@
 <template>
   <div class="form__item">
     <p class="form__item-text">{{ text }}</p>
-    <div @click="selectIsOpen = !selectIsOpen" class="select">
+    <div @click="selectIsOpen = !selectIsOpen" 
+    :class="selectIsOpen && 'select--active'"
+    class="select ">
       <img class="select__arrow" src="../../img/arrow.png" alt="Стрелочечка" />
       <p class="select__title">{{ activ_options || text }}</p>
       <ul
